@@ -4,9 +4,9 @@ OCI_REPO = ghcr.io/duhow/xiaoai-patch
 OCI_DIR = docker_pull
 
 BUILD_DIR = squashfs-root
-FILE = mtd4
+FILE = rootfs.img
 DATE := $(shell date +%y%m%d-%H%M)
-MODEL ?= none
+MODEL ?= LX01
 override MODEL := $(shell echo $(MODEL) | tr '[:upper:]' '[:lower:]')
 IMAGE_NAME = image-$(DATE)
 DESTDIR ?= release/$(MODEL)
