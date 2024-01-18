@@ -3,7 +3,10 @@
 # This script will launch Porcupine (hotword detector) on infinite loop.
 # Service can be stopped, same as pressing the MUTE button.
 
-MIC="mico_record"
+# ac108.1-003b on my lx01 board and it supports 8 channel only
+# and porcupine needs 1 channel 16bit 16kHz
+# so we mix all 8 channels into one, see the config in /etc/asound.conf
+MIC="convert_to_mono"
 
 SENSITIVITY="0.6"
 WORD=alexa
