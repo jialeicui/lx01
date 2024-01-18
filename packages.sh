@@ -648,6 +648,13 @@ fi
 if [[ "${BUILD_MODEL}" = "S12" ]]; then
   BUILD_ARCH="aarch64"
 fi
+
+# if no BUILD_MODEL is specified, raise error
+if [[ -z "${BUILD_MODEL}" ]]; then
+  echo_error "Error: No model specified, use MODEL=xxx to specify model"
+  exit 1
+fi
+
 HOST_ARCH=$(uname -m)
 ymd=$(date '+%Y%m%d')
 PACKAGES_PROCESSED=()

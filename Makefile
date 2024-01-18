@@ -137,6 +137,9 @@ $(BUILD_DIR): extract
 $(BUILD_DIR)/patched: patch
 /dev/mtd0: modprobe_mtd
 
+build_lx01:
+	docker run -it -e MODEL=LX01 -v $(PWD):/xiaoai xiaoai-patch
+
 help:
 	@echo "Usage (as root): "
 	@echo ""
